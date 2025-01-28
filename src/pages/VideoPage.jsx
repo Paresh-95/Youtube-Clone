@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { VideoContext } from "../context/videoContext";
 import formatCount from "../lib/format-likeCount";
 import formatTimeAgo from "../lib/format-time";
@@ -30,38 +30,7 @@ const VideoPage = () => {
     likes: "10K",
   });
 
-  const [comments] = useState([
-    { user: "User 1", text: "Great video!" },
-    { user: "User 2", text: "Very informative content" },
-    { user: "User 3", text: "Thanks for sharing!" },
-  ]);
-
-  const [relatedVideos] = useState([
-    {
-      thumbnail:
-        videoData?.snippet?.thumbnails?.medium?.url ||
-        "https://via.placeholder.com/160x90",
-      title: "Related Video 1",
-      channel: "Channel 1",
-      views: "50K",
-    },
-    {
-      thumbnail:
-        videoData?.snippet?.thumbnails?.medium?.url ||
-        "https://via.placeholder.com/160x90",
-      title: "Related Video 2",
-      channel: "Channel 2",
-      views: "30K",
-    },
-    {
-      thumbnail:
-        videoData?.snippet?.thumbnails?.medium?.url ||
-        "https://via.placeholder.com/160x90",
-      title: "Related Video 3",
-      channel: "Channel 3",
-      views: "20K",
-    },
-  ]);
+ 
 
   if (!videoData) {
     return <div className="p-6">Loading...</div>;
@@ -147,6 +116,10 @@ const VideoPage = () => {
       <div className="w-full lg:w-96 mt-8 lg:mt-0">
         <h3 className="text-xl font-bold mb-4">Related Videos</h3>
         {suggestedVideos.map((item, index) => (
+          <Link 
+          to={`/watch/${item.id}`}
+          state={{ videoData: item }}  // Properly pass the full item object
+        >
           <div key={index} className="flex space-x-4 mb-4">
             <img
               src={item.snippet.thumbnails.high.url}
@@ -168,6 +141,7 @@ const VideoPage = () => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
