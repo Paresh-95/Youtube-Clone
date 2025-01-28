@@ -1,1 +1,37 @@
 /* write your css here */
+/* Custom Scrollbar Styles */
+.thin-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    border-radius: 4px;
+  }
+  
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #606060;
+  }
+  
+  /* For Firefox */
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #909090 transparent;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  

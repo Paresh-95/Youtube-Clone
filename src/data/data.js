@@ -7,7 +7,6 @@ import { GoVideo } from "react-icons/go";
 import { MdPlaylistAddCheckCircle } from "react-icons/md";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { AiTwotoneLike } from "react-icons/ai";
-import { FaGreaterThan } from "react-icons/fa6";
 import {
   IoFlameOutline,
   IoMusicalNotesOutline,

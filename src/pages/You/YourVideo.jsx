@@ -1,8 +1,10 @@
 import React from 'react'
+import UnderDevlopment from '../../components/UnderDevlopment'
+
 
 const YourVideo = () => {
   return (
-    <div>YourVideo</div>
+    <div> <UnderDevlopment/></div>
   )
 }
 
