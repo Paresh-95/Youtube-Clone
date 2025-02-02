@@ -18,6 +18,7 @@ import Help from "./pages/Help"
 import YourCourse from "./pages/You/YourCourse"
 import VideoPage from "./pages/VideoPage"
 import UnderDevlopment from "./components/UnderDevlopment"
+import SearchResults from "./components/SearchResult"
 
 function App() {
   const [openSidebar, setOpenSidebar] = useState(true)
@@ -57,6 +58,7 @@ function App() {
               <Route path="/help" element={<Help />} />
               <Route path="/watch/:id" element={<VideoPage />} />
               <Route path="*" element={<UnderDevlopment />} />
+              <Route path="/search" element={<SearchResults />} />
             </Routes>
           </div>
         </div>
